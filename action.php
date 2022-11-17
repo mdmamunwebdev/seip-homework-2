@@ -3,11 +3,16 @@
 require_once "vendor/autoload.php";
 use App\classes\Blog;
 use App\classes\Auth;
+use App\classes\BlogCategory;
 
 $saveResult = 'Add A New Blog';
 $getAllBlog = '';
 $getSingleBlog = '';
 $getBlogDetail = '';
+$getCategory = '';
+
+$blogCategroy = new BlogCategory();
+$getCategory = $blogCategroy->getAllCategory();
 
 
 if (isset($_GET['page'])) {
@@ -16,7 +21,8 @@ if (isset($_GET['page'])) {
 
         $blog = new Blog();
         $getAllBlog = $blog->getBlogs();
-
+        // $getCategory = $blog->getCategory();
+        
         include './pages/home.php';
     }
     elseif ($_GET['page'] == 'add-blog') {

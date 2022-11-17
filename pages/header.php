@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -57,10 +58,11 @@
                             <li class="dropdown">
                                 <a href="" class="nav-link dropdown-toggle" data-bs-target="#categoryDropdown" data-bs-toggle="dropdown">Categories</a>
                                 <ul class="dropdown-menu" id="categoryDropdown">
-                                    <li><a href="action.php?page=categories" class="dropdown-item">1</a></li>
-                                    <li><a href="action.php?page=categories" class="dropdown-item">1</a></li>
-                                    <li><a href="action.php?page=categories" class="dropdown-item">1</a></li>
-                                    <li><a href="action.php?page=categories" class="dropdown-item">1</a></li>
+                                    <?php foreach($getCategory as $category) { ?>
+
+                                        <li><a href="action.php?page=categories&&id=<?php echo $category['id']; ?>" class="dropdown-item text-capitalize"><?php echo $category['name']; ?></a></li>
+
+                                    <?php }?>
                                 </ul>
                             </li>
                         </ul>

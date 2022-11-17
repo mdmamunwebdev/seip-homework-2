@@ -22,12 +22,13 @@
                         <div class="col-6">
                             <h5 class="mb-4">Categories</h5>
                             <ul class="navbar-nav">
-                                <li><a href="" class="nav-link">&gt; Business</a></li>
-                                <li><a href="" class="nav-link">&gt; Culture</a></li>
-                                <li><a href="" class="nav-link">&gt; Politics</a></li>
-                                <li><a href="" class="nav-link">&gt; Foods</a></li>
-                                <li><a href="" class="nav-link">&gt; Entertainment</a></li>
-                                <li><a href="" class="nav-link">&gt; Sport</a></li>
+                                
+                                <?php foreach($getCategory as $category) { ?>
+
+                                    <li><a href="action.php?page=categories&&id=<?php echo $category['id']; ?>" class="nav-link text-capitalize">&gt; <?php echo $category['name']; ?></a></li>
+
+                                <?php } ?>
+                                
                             </ul>
                         </div>
                     </div>

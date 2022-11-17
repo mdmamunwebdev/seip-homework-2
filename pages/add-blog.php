@@ -33,13 +33,14 @@ if (!isset($_SESSION['id'])) {
                                 <label for="" class="col-md-3">Blog Category</label>
                                 <div class="col-md-9">
                                     <select name="category" id="" class="form-select text-capitalize">
+
                                         <option selected>Select Any Category</option>
-                                        <option value="culture">Culture</option>
-                                        <option value="sport">Sport</option>
-                                        <option value="lifestyle">Life style</option>
-                                        <option value="food">Food</option>
-                                        <option value="politics">Politics</option>
-                                        <option value="business">Business</option>
+                                        <?php foreach($getCategory as $category) { ?>
+
+                                            <option value="<?php echo $category['id']; ?>"><?php echo $category['name']; ?></option>
+
+                                        <?php }?>
+                                
                                     </select>
                                 </div>
                             </div>

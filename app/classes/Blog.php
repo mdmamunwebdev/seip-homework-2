@@ -2,10 +2,11 @@
 
 namespace App\classes;
 use App\classes\Database;
+use App\classes\BlogCategory;
 
 class Blog
 {
-    private $title, $author, $description, $imageName, $sql, $dbConntect, $files = [], $actualDirectory, $blogDataQuery, $row, $blogData = [], $image, $id;
+    private $title, $author, $description, $imageName, $sql, $dbConntect, $files = [], $actualDirectory, $blogDataQuery, $row, $blogData = [], $image, $id, $category;
 
     public function __construct($post = [], $file = []) {
 
@@ -62,6 +63,11 @@ class Blog
         }else {
             return "false";
         }
+    }
+
+    public function getCategory() {
+        $this->category = new BlogCategory();
+        return $this->category->getAllCategory();
     }
 
     public function getBlogById($get) {
